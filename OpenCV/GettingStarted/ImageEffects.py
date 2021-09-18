@@ -9,6 +9,9 @@ A matrix of 5x5 with all 1
 '''
 kernel = np.ones((5, 5), np.uint8)
 
+'''
+BGR 
+'''
 imageGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 '''

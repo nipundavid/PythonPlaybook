@@ -86,7 +86,7 @@ while True:
     # cv2.imshow("HSV Image", imgHSV)
     # cv2.imshow("Mask", mask)
     # cv2.imshow("Result", imageResult)
-    
+
     imgStack = stackImages(0.6, ([img, imgHSV], [mask, imageResult]))
     cv2.imshow("Detect Color", imgStack)
 

@@ -53,7 +53,7 @@ def stackImages(scale, imgArray):
         ver = hor
     return ver
 
-path = 'Resources/lambo.png'
+path = 'Resources/shapes.png'
 cv2.namedWindow("TrackBars")
 cv2.resizeWindow("TrackBars", 640, 240)
 cv2.createTrackbar("Hue Min", "TrackBars", 0, 179, empty)
@@ -73,7 +73,7 @@ while True:
     v_min = cv2.getTrackbarPos("Val Min", "TrackBars")
     v_max = cv2.getTrackbarPos("Val Max", "TrackBars")
 
-    print(h_min, h_max, s_min, s_max, v_min, v_max)
+    # print(h_min, h_max, s_min, s_max, v_min, v_max)
 
     lower = np.array([h_min, s_min, v_min])
     upper = np.array([h_max, s_max, v_max])
@@ -89,7 +89,7 @@ while True:
 
     imgStack = stackImages(0.6, ([img, imgHSV], [mask, imageResult]))
     cv2.imshow("Detect Color", imgStack)
-
-    cv2.waitKey(1)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
 
